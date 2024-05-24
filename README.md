@@ -1,4 +1,4 @@
-<h1 align="center">[PROJECT_NAME]</h1>
+<h1 align="center">Docker Images</h1>
 
 <p align="center">
 	<br>
