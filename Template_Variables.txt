@@ -1,0 +1,38 @@
+Template Variables:
+
+
+CONTRIBUTING.md
+[PROJECT_NAME] = The ROS Robot project
+[DISCUSSIONS_URL] = https://github.com/{REPO_LOC}/discussions
+[CONTRIBUTION_OPEN_TO_PR_ISSUES_URL] = https://github.com/{REPO_LOC}/labels/open%20to%20PR
+[BUG_FIX_REQUEST_URL] = https://github.com/{REPO_LOC}/blob/main/.github/PULL_REQUEST_TEMPLATE/bug-fix.md
+[NEW_FEATURE_REQUEST_URL] = https://github.com/{REPO_LOC}/blob/main/.github/PULL_REQUEST_TEMPLATE/new-feature.md
+[LICENSE_URL] = https://github.com/{REPO_LOC}/blob/main/LICENSE
+
+
+README.md
+[PROJECT_NAME] = The ROS Robot project
+[LOGO_IMG_URL] = https://github.com/{REPO_LOC}/raw/stage-1/Assets/Logos/ROS_logo.svg
+[LOGO_HREF_URL] = https://www.ros.org
+[LICENSE_URL] = https://github.com/{REPO_LOC}/blob/main/LICENSE
+[LICENSE_BADGE_URL] = https://img.shields.io/github/license/{REPO_LOC}?color=blue
+[ISSUES_URL] = https://github.com/{REPO_LOC}/issues
+[ISSUES_BADGE_URL] = https://img.shields.io/github/issues/{REPO_LOC}
+[CONTRIBUTING_MD_URL] = https://github.com/{REPO_LOC}/blob/main/CONTRIBUTING.md
+[CURRENT_YEAR] = 2024
+[Project Description]
+[Credits]
+
+
+.github/PULL_REQUEST_TEMPLATE/bug-fix.md
+[PROJECT_NAME] = The ROS Robot project
+[LICENSE_URL] = https://github.com/{REPO_LOC}/blob/main/LICENSE
+
+
+.github/PULL_REQUEST_TEMPLATE/new-feature.md
+[PROJECT_NAME] = The ROS Robot project
+[LICENSE_URL] = https://github.com/{REPO_LOC}/blob/main/LICENSE
+
+
+.github/pull_request_template.md
+[CONTRIBUTING_MD_URL] = https://github.com/{REPO_LOC}/blob/main/CONTRIBUTING.md
