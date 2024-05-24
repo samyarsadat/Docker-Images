@@ -2,17 +2,18 @@
 
 <p align="center">
 	<br>
-	<a href="[LOGO_HREF_URL]"><img src="[LOGO_IMG_URL]"></a>
+	<a href="https://www.docker.com/"><img src="https://github.com/samyarsadat/Docker-Images/raw/main/.github/images/docker-logo-blue.png"></a>
 	<br><br>
-	<a href="[LICENSE_URL]"><img src="[LICENSE_BADGE_URL]"></a>
+	<a href="https://github.com/samyarsadat/Docker-Images/blob/main/LICENSE"><img src="https://img.shields.io/github/license/samyarsadat/Docker-Images?color=blue"></a>
 	|
-	<a href="[ISSUES_URL]"><img src="[ISSUES_BADGE_URL]"></a>
+	<a href="https://github.com/samyarsadat/Docker-Images/issues"><img src="https://img.shields.io/github/issues/samyarsadat/Docker-Images"></a>
 	<br><br>
 </p>
 
 
 ----
-[Project Description]
+This repository contains all of my custom base Docker images, and the files for my private Docker Registry container.<br>
+The Docker Registry container is meant to run on ServerPi, but I've chosen to host its files here.
 <br><br>
 
 
@@ -24,17 +25,12 @@ If you think that you have found a bug or issue please report it <a href="[ISSUE
 <br><br>
 
 
-## Contributing
-Please take a look at <a href="[CONTRIBUTING_MD_URL]">CONTRIBUTING.md</a> for contributing.
-<br><br>
-
-
 ## Credits
-| Role           | Name                                   |
-| -------------- | -------------------------------------- |
-| [Role]         | [User]                                 |
+| Role           | Name                                                             |
+| -------------- | ---------------------------------------------------------------- |
+| Developer      | <a href="https://github.com/samyarsadat">Samyar Sadat Akhavi</a> |
 
 <br><br>
 
 
-Copyright © [CURRENT_YEAR] Samyar Sadat Akhavi.
+Copyright © 2024 Samyar Sadat Akhavi.
