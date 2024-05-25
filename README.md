@@ -12,10 +12,13 @@
 
 
 ----
-This repository contains all of my custom base Docker images, and the files for my private Docker Registry container.<br>
-The Docker Registry container is meant to run on ServerPi, but I've chosen to host its files here.
-<br><br>
+This repository contains all of my custom base Docker images<br>
 
+### List of Docker Images
+1. **default_alpine_latest**: _Default latest Alpine Linux image._
+2. **default_ubuntu_22.04**: _Default Ubuntu 22.04 (Jammy) image._
+
+<br>
 
 ## Contact
 You can contact me via e-mail.<br>
