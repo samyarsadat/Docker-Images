@@ -20,7 +20,7 @@ FROM caddy:builder AS builder
 
 # Build Caddy with the CloudflareIPRange module
 RUN xcaddy build \
-    --with https://github.com/WeidiDeng/caddy-cloudflare-ip
+    --with github.com/WeidiDeng/caddy-cloudflare-ip
 
 # Standard Caddy image
 FROM caddy:latest
