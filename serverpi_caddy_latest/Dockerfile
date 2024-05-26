@@ -18,6 +18,11 @@
 
 FROM caddy:builder AS builder
 
+# Metadata
+LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
+LABEL org.opencontainers.image.description="SSA Docker Images: ServerPi Caddy V2 Image (Latest)"
+LABEL org.opencontainers.image.licenses=GPL-3.0-only
+
 # Build Caddy with the CloudflareIPRange module
 RUN xcaddy build \
     --with github.com/WeidiDeng/caddy-cloudflare-ip

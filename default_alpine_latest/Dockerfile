@@ -1,4 +1,4 @@
-#  Docker Images - Default Ubuntu Image (22.04 - Jammy Jellyfish)
+#  Docker Images - Default Alpine Image (Latest)
 #  Copyright 2024 Samyar Sadat Akhavi
 #  Written by Samyar Sadat Akhavi, 2024.
 #
@@ -15,13 +15,21 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https: www.gnu.org/licenses/>.
 
-FROM ubuntu:jammy
+FROM alpine:latest
 
 
-# Install git, nano, and curl
-RUN apt-get update \
-    && apt-get install -y git nano curl \
-    && rm -rf /var/lib/apt/lists/* && apt-get autoremove && apt-get autoclean
+# Metadata
+LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
+LABEL org.opencontainers.image.description="SSA Docker Images: Default Alpine Image (Latest)"
+LABEL org.opencontainers.image.licenses=GPL-3.0-only
+
+# Install bash, git, nano, and curl
+USER root
+RUN apk add --no-cache bash git nano curl
+
+# Install and configure SUDO
+RUN apk add --no-cache sudo \
+    && echo "%wheel ALL=(ALL) ALL" > /etc/sudoers.d/wheel
 
 # Create non-root user
 ARG USERNAME=nonroot
@@ -29,16 +37,11 @@ ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ENV USER_HOME=/home/$USERNAME
 
-RUN groupadd --gid $USER_GID $USERNAME \
-    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
-    && mkdir /home/$USERNAME/.config && chown -R $USER_UID:$USER_GID /home/$USERNAME/
-
-# Install and configure SUDO
-RUN apt-get update \
-    && apt-get install -y sudo \
-    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
-    && chmod 0440 /etc/sudoers.d/$USERNAME \
-    && rm -rf /var/lib/apt/lists/* && apt-get autoremove && apt-get autoclean
+RUN addgroup -g $USER_GID $USERNAME \
+    && adduser -u $USER_UID -G $USERNAME $USERNAME \
+    && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
+    && chmod 0440 /etc/sudoers.d/$USER \
+    && mkdir $USER_HOME/.config && chown -R $USER_UID:$USER_GID $USER_HOME
 
 # Environment setup
 USER $USERNAME
