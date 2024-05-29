@@ -28,9 +28,10 @@ jobs:
 
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        uses: docker/metadata-action@v5
         with:
           images: samyarsadat/custom_base_images
+          tags: type=raw,value=default-ubuntu-22.04
 
       - name: Build and push Docker image
         id: push
@@ -40,7 +41,8 @@ jobs:
           file: ./default_ubuntu_22.04/Dockerfile
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: custom_base_images/default-ubuntu-22.04
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
       
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
