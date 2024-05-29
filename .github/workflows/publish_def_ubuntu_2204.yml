@@ -36,14 +36,13 @@ jobs:
 
       - name: Build and push Docker image
         id: push
-        uses: docker/build-push-action@3b5e8027fcad23fda98b2e3ac259d8d67585f671
+        uses: docker/build-push-action@v5
         with:
           context: .
-          platforms: linux/amd64,linux/arm64
           file: ./default_ubuntu_22.04/Dockerfile
+          platforms: linux/amd64,linux/arm64
           push: true
-          tags: default-ubuntu-22.04
-          labels: ${{ steps.meta.outputs.labels }}
+          tags: custom_docker_images/default-ubuntu-22.04
       
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
