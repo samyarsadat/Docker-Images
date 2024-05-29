@@ -41,6 +41,7 @@ jobs:
           context: .
           file: ./default_ubuntu_22.04/Dockerfile
           platforms: linux/arm64
+          builder: container
           push: true
           tags: custom_docker_images/default-ubuntu-22.04
       
