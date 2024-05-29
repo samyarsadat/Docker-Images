@@ -38,9 +38,9 @@ ARG USER_GID=$USER_UID
 ENV USER_HOME=/home/$USERNAME
 
 RUN addgroup -g $USER_GID $USERNAME \
-    && adduser -u $USER_UID -G $USERNAME $USERNAME \
-    && echo "$USER ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USER \
-    && chmod 0440 /etc/sudoers.d/$USER \
+    && adduser -u $USER_UID -G $USERNAME $USERNAME --disabled-password \
+    && echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
     && mkdir $USER_HOME/.config && chown -R $USER_UID:$USER_GID $USER_HOME
 
 # Environment setup
