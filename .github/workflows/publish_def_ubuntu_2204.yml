@@ -1,13 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# GitHub recommends pinning actions to a commit SHA.
-# To get a newer version, you will need to update the SHA.
-# You can also reference a tag or branch, but the action may change without warning.
-
-name: Publish Docker image
+name: Publish Default Ubuntu 22.04 Image
 on: push
 
 jobs:
@@ -18,6 +9,7 @@ jobs:
       packages: write
       contents: read
       attestations: write
+      
     steps:
       - name: Check out the repo
         uses: actions/checkout@v4
@@ -48,7 +40,7 @@ jobs:
           file: ./default_ubuntu_22.04/Dockerfile
           platforms: linux/arm64,linux/amd64
           push: true
-          tags: custom_docker_images/default-ubuntu-22.04
+          tags: custom_base_images/default-ubuntu-22.04
       
       - name: Generate artifact attestation
         uses: actions/attest-build-provenance@v1
