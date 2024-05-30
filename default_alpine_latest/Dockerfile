@@ -20,6 +20,7 @@ FROM alpine:latest
 
 # Metadata
 LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
+LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
 LABEL org.opencontainers.image.description="SSA Docker Images: Default Alpine Image (Latest)"
 LABEL org.opencontainers.image.licenses=GPL-3.0-only
 

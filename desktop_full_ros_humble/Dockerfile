@@ -1,4 +1,4 @@
-#  Docker Images - Default Ubuntu Image (22.04 - Jammy Jellyfish)
+#  Docker Images - ROS 2 Humble Image (Full Desktop w/ Gazebo)
 #  Copyright 2024 Samyar Sadat Akhavi
 #  Written by Samyar Sadat Akhavi, 2024.
 #
@@ -15,18 +15,18 @@
 #  You should have received a copy of the GNU General Public License
 #  along with this program.  If not, see <https: www.gnu.org/licenses/>.
 
-FROM ubuntu:jammy
+FROM osrf/ros:humble-desktop-full
 
 
 # Metadata
 LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
 LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
-LABEL org.opencontainers.image.description="SSA Docker Images: Default Ubuntu Image (22.04 - Jammy Jellyfish)"
+LABEL org.opencontainers.image.description="SSA Docker Images: ROS 2 Humble Image (Full Desktop w/ Gazebo)"
 LABEL org.opencontainers.image.licenses=GPL-3.0-only
 
-# Install git, nano, and curl
+# Install git, nano, curl, and Gazebo
 RUN apt-get update \
-    && apt-get install -y git nano curl \
+    && apt-get install -y git nano curl ros-${ROS_DISTRO}-ros-gz \
     && rm -rf /var/lib/apt/lists/* && apt-get autoremove && apt-get autoclean
 
 # Create non-root user
@@ -47,4 +47,4 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* && apt-get autoremove && apt-get autoclean
 
 # Environment setup
-USER $USERNAME
+USER root
