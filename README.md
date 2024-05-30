@@ -18,6 +18,12 @@ This repository contains all of my custom base Docker images<br>
 1. **default-alpine-latest**: _Default latest Alpine Linux image._
 2. **default-ubuntu-22.04**: _Default Ubuntu 22.04 (Jammy) image._
 3. **serverpi-caddy-latest**: _The Caddy V2 image that is used by ServerPi._
+<br>
+
+### Status
+[![Push all images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml)
+<br>
+[![Push all images to Docker Hub (Periodic)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images_periodic.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images_periodic.yml)
 
 <br>
 
