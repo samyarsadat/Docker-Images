@@ -12,12 +12,14 @@
 
 
 ----
-This repository contains all of my custom base Docker images<br>
+This repository contains all of my custom base Docker images.<br>
 
 ### List of Docker Images
 1. **default-alpine-latest**: _Default latest Alpine Linux image._
 2. **default-ubuntu-22.04**: _Default Ubuntu 22.04 (Jammy) image._
 3. **serverpi-caddy-latest**: _The Caddy V2 image that is used by ServerPi._
+4. **base-ros-humble**: _Default ROS 2 Humble (Base) image._
+5. **desktop-full-ros-humble**: _Default ROS 2 Humble (Full Desktop w/ Gazebo) image._
 <br>
 
 ### Status
