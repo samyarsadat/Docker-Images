@@ -1,5 +1,8 @@
-name: Push all images to Docker Hub (Periodic)
+name: Push all BASE images to Docker Hub
 on: 
+    push:
+        branches:
+            - main
     schedule:
         - cron: '30 16 * * MON'   # Every Monday at 4:30 PM UTC
 
@@ -38,7 +41,7 @@ jobs:
               uses: docker/build-push-action@v5
               with:
                   context: .
-                  file: ./default_ubuntu_22.04/Dockerfile
+                  file: ./base_images/default_ubuntu/Dockerfile_22-04
                   platforms: linux/arm64,linux/amd64
                   push: true
                   tags: ${{steps.meta.outputs.tags}}
@@ -79,48 +82,7 @@ jobs:
               uses: docker/build-push-action@v5
               with:
                   context: .
-                  file: ./default_alpine_latest/Dockerfile
-                  platforms: linux/arm64,linux/amd64
-                  push: true
-                  tags: ${{steps.meta.outputs.tags}}
-                  labels: ${{steps.meta.outputs.labels}}
-
-
-    push_serverpi_caddy_latest:
-        name: Push ServerPi Caddy (Latest) Image to Docker Hub
-        runs-on: ubuntu-latest
-        permissions:
-            packages: write
-            contents: read
-
-        steps:
-            - name: Check out the repo
-              uses: actions/checkout@v4
-
-            - name: Set up QEMU
-              uses: docker/setup-qemu-action@v3
-
-            - name: Set up Docker Buildx
-              uses: docker/setup-buildx-action@v3
-
-            - name: Log in to Docker Hub
-              uses: docker/login-action@v3
-              with:
-                  username: ${{secrets.DOCKER_USERNAME}}
-                  password: ${{secrets.DOCKER_PASSWORD}}
-
-            - name: Extract metadata (tags, labels) for Docker
-              id: meta
-              uses: docker/metadata-action@v5
-              with:
-                  images: samyarsadat/custom_base_images
-                  tags: type=raw,value=serverpi-caddy-latest
-
-            - name: Build and push Docker image
-              uses: docker/build-push-action@v5
-              with:
-                  context: .
-                  file: ./serverpi_caddy_latest/Dockerfile
+                  file: ./base_images/default_alpine/Dockerfile_latest
                   platforms: linux/arm64,linux/amd64
                   push: true
                   tags: ${{steps.meta.outputs.tags}}
@@ -161,7 +123,7 @@ jobs:
               uses: docker/build-push-action@v5
               with:
                   context: .
-                  file: ./base_ros_humble/Dockerfile
+                  file: ./base_images/base_ros/Dockerfile_humble
                   platforms: linux/arm64,linux/amd64
                   push: true
                   tags: ${{steps.meta.outputs.tags}}
@@ -202,7 +164,7 @@ jobs:
               uses: docker/build-push-action@v5
               with:
                   context: .
-                  file: ./desktop_full_ros_humble/Dockerfile
+                  file: ./base_images/desktop_full_ros/Dockerfile_humble
                   platforms: linux/amd64   # OSRF Profile ROS images are only available for AMD64
                   push: true
                   tags: ${{steps.meta.outputs.tags}}

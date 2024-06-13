@@ -12,20 +12,33 @@
 
 
 ----
-This repository contains all of my custom base Docker images.<br>
+This repository contains all of my custom base and service-specific Docker images.<br>
+Base images are generic. They have a few standard packages installed but are otherwise non-specific.<br>
+Service images are for a specific use case. They are not meant to be generic.<br>
+
+### Repository Structure
+Service images are in `/service_images` and base images in `/base_images`.<br>
+Each image in these directories may contain several Dockerfiles for each version of the image.<br>
+For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `Dockerfile_22-04` and another named `Dockerfile_24-04` 
+for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
+<br><br>
 
 ### List of Docker Images
-1. **default-alpine-latest**: _Default latest Alpine Linux image._
-2. **default-ubuntu-22.04**: _Default Ubuntu 22.04 (Jammy) image._
-3. **serverpi-caddy-latest**: _The Caddy V2 image that is used by ServerPi._
-4. **base-ros-humble**: _Default ROS 2 Humble (Base) image._
-5. **desktop-full-ros-humble**: _Default ROS 2 Humble (Full Desktop w/ Gazebo) image._
+| Name                   | Description                                   | Tags                       | Architectures     | Docker Hub Repository     |
+| ---------------------- | --------------------------------------------- | -------------------------- | ----------------- | ------------------------- |
+| `default_alpine`       | Default Alpine Linux images                   | `default-alpine-latest`    | `amd64`, `arm64`  | `custom_base_images`      |
+| `default_ubuntu`       | Default Ubuntu images                         | `default-ubuntu-22.04`     | `amd64`, `arm64`  | `custom_base_images`      |
+| `base_ros`             | Default ROS Base images                       | `base-ros-humble`          | `amd64`, `arm64`  | `custom_base_images`      |
+| `desktop_full_ros`     | Default ROS Full Desktop w/ Gazebo images     | `desktop-full-ros-humble`  | `amd64`           | `custom_base_images`      |
+| `serverpi_caddy`       | The Caddy V2 image that is used by ServerPi   | `serverpi-caddy-latest`    | `amd64`, `arm64`  | `service_images`          |
+| `pico_build_action`    | Raspberry Pi Pico GitHub build action image   | `pico-build-action-latest` | `amd64`, `arm64`  | `service_images`          |
+
 <br>
 
 ### Status
-[![Push all images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml)
+[![Push service images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_service_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_service_images.yml)
 <br>
-[![Push all images to Docker Hub (Periodic)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images_periodic.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images_periodic.yml)
+[![Push base images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml)
 
 <br>
 
