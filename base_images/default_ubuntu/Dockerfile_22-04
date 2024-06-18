@@ -22,7 +22,7 @@ FROM ubuntu:jammy
 LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
 LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
 LABEL org.opencontainers.image.description="SSA Docker Images: Default Ubuntu Image (22.04 - Jammy Jellyfish)"
-LABEL org.opencontainers.image.licenses=GPL-3.0-only
+LABEL org.opencontainers.image.licenses=GPL-3.0
 
 # Install git, nano, and curl
 RUN apt-get update \

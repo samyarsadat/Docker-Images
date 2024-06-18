@@ -21,7 +21,7 @@ FROM ubuntu:jammy
 LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
 LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
 LABEL org.opencontainers.image.description="SSA Docker Images: Pico Build Action (Latest)"
-LABEL org.opencontainers.image.licenses=GPL-3.0-only
+LABEL org.opencontainers.image.licenses=GPL-3.0
 
 # Install dependencies
 RUN apt-get update \
