@@ -29,14 +29,15 @@ for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
 <br><br>
 
 ### List of Docker Images
-| Name                   | Description                                   | Tags                       | Architectures                | Docker Hub Repository     |
-| ---------------------- | --------------------------------------------- | -------------------------- | ---------------------------- | ------------------------- |
-| `default_alpine`       | Default Alpine Linux images                   | `default-alpine-latest`    | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `default_ubuntu`       | Default Ubuntu images                         | `default-ubuntu-22.04`     | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `base_ros`             | Default ROS Base images                       | `base-ros-humble`          | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `desktop_full_ros`     | Default ROS Full Desktop w/ Gazebo images     | `desktop-full-ros-humble`  | `linux/amd64`                | `custom_base_images`      |
-| `serverpi_caddy`       | The Caddy V2 image that is used by ServerPi   | `serverpi-caddy-latest`    | `linux/amd64`, `linux/arm64` | `service_images`          |
-| `pico_build_action`    | Raspberry Pi Pico GitHub build action image   | `pico-build-action-latest` | `linux/amd64`, `linux/arm64` | `service_images`          |
+| Name                    | Description                                   | Tags                           | Architectures                | Docker Hub Repository     |
+| ----------------------- | --------------------------------------------- | ------------------------------ | ---------------------------- | ------------------------- |
+| `default_alpine`        | Default Alpine Linux images                   | `default-alpine-latest`        | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `default_ubuntu`        | Default Ubuntu images                         | `default-ubuntu-22.04`         | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `base_ros`              | Default ROS Base images                       | `base-ros-humble`              | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `desktop_full_ros`      | Default ROS Full Desktop w/ Gazebo images     | `desktop-full-ros-humble`      | `linux/amd64`                | `custom_base_images`      |
+| `serverpi_caddy`        | The Caddy V2 image that is used by ServerPi   | `serverpi-caddy-latest`        | `linux/amd64`, `linux/arm64` | `service_images`          |
+| `pico_build_action`     | Raspberry Pi Pico GitHub build action image   | `pico-build-action-latest`     | `linux/amd64`, `linux/arm64` | `service_images`          |
+| `microros_build_action` | MicroROS GitHub build action image            | `microros-build-action-latest` | `linux/amd64`, `linux/arm64` | `service_images`          |
 
 <br>
 
