@@ -19,6 +19,13 @@ on:
                 default: "linux/arm64,linux/amd64"
                 required: false
                 type: string
+        secrets: 
+            DOCKER_USERNAME: 
+                description: "Docker Hub username."
+                required: true
+            DOCKER_PASSWORD:
+                description: "Docker Hub password."
+                required: true
 
 jobs:
     push_image:

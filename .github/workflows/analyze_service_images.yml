@@ -15,6 +15,7 @@ jobs:
         with:
             image: samyarsadat/service_images
             image_tag: serverpi-caddy-latest
+            analysis_name: serverpi-caddy-latest
 
     pico_build_action_latest:
         name: Pico Build Action Latest
@@ -22,6 +23,7 @@ jobs:
         with:
             image: samyarsadat/service_images
             image_tag: pico-build-action-latest
+            analysis_name: pico-build-action-latest
 
     microros_build_action_latest:
         name: MicroROS Build Action Latest
@@ -29,3 +31,4 @@ jobs:
         with:
             image: samyarsadat/service_images
             image_tag: microros-build-action-latest
+            analysis_name: microros-build-action-latest

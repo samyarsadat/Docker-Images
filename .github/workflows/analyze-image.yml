@@ -10,6 +10,10 @@ on:
                 description: "The tag of the image to analyze."
                 required: true
                 type: string
+            analysis_name:
+                description: "The name of the analysis. This will be used in the output file name. It should be unique for each analysis."
+                required: true
+                type: string
 
 jobs:
     analyze_image:
@@ -29,9 +33,9 @@ jobs:
                   image-ref: "docker.io/${{inputs.image}}:${{inputs.image_tag}}"
                   format: "template"
                   template: "@/contrib/sarif.tpl"
-                  output: "trivy-results_${{inputs.image}}:${{inputs.image_tag}}.sarif"
+                  output: "trivy-results_${{inputs.image}}_${{inputs.image_tag}}.sarif"
 
             - name: Upload Trivy Scan Results
               uses: github/codeql-action/upload-sarif@v2
               with:
-                  sarif_file: "trivy-results_${{inputs.image}}:${{inputs.image_tag}}.sarif"
+                  sarif_file: "trivy-results_${{inputs.analysis_name}}.sarif"

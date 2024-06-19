@@ -15,6 +15,7 @@ jobs:
         with:
             image: samyarsadat/custom_base_images
             image_tag: default-ubuntu-22.04
+            analysis_name: default-ubuntu-22.04
 
     default_alpine_latest:
         name: Default Alpine Latest
@@ -22,6 +23,7 @@ jobs:
         with:
             image: samyarsadat/custom_base_images
             image_tag: default-alpine-latest
+            analysis_name: default-alpine-latest
 
     base_ros_humble:
         name: Base ROS Humble
@@ -29,6 +31,7 @@ jobs:
         with:
             image: samyarsadat/custom_base_images
             image_tag: base-ros-humble
+            analysis_name: base-ros-humble
 
     full_ros_humble:
         name: Full Desktop ROS Humble
@@ -36,3 +39,4 @@ jobs:
         with:
             image: samyarsadat/custom_base_images
             image_tag: full-ros-humble
+            analysis_name: full-ros-humble
