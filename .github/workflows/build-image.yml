@@ -21,7 +21,7 @@ on:
                 type: string
 
 jobs:
-    push_serverpi_caddy_latest:
+    push_image:
         name: Build & Push ${{inputs.image}}:${{inputs.image_tag}}
         runs-on: ubuntu-latest
         permissions:

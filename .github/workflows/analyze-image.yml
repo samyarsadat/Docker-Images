@@ -12,7 +12,7 @@ on:
                 type: string
 
 jobs:
-    analyze:
+    analyze_image:
         name: Analyze ${{inputs.image}}:${{inputs.image_tag}}
         runs-on: "ubuntu-20.04"
         permissions:

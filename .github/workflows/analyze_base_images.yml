@@ -4,6 +4,10 @@ on:
     schedule:
         - cron: '50 16 * * MON'   # Every Monday at 4:50 PM UTC
 
+permissions:
+    security-events: write
+    contents: read
+
 jobs:
     default_ubuntu_jammy:
         name: Default Ubuntu 22.04
