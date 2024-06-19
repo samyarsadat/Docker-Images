@@ -42,9 +42,13 @@ for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
 <br>
 
 ### Status
+[![Push base images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml)
+<br>
 [![Push service images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_service_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_service_images.yml)
 <br>
-[![Push base images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml)
+[![Analyze all BASE images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_base_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_base_images.yml)
+<br>
+[![Analyze all SERVICE images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_service_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_service_images.yml)
 
 <br>
 
