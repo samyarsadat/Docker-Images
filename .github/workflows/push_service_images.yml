@@ -16,6 +16,9 @@ jobs:
             image: samyarsadat/service_images
             image_tag: serverpi-caddy-latest
             dockerfile_path: ./service_images/serverpi_caddy/Dockerfile_latest
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
 
     pico_build_action_latest:
         name: Pico Build Action Latest
@@ -24,6 +27,9 @@ jobs:
             image: samyarsadat/service_images
             image_tag: pico-build-action-latest
             dockerfile_path: ./service_images/pico_build_action/Dockerfile_latest
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
 
     microros_build_action_latest:
         name: MicroROS Build Action Latest
@@ -32,3 +38,6 @@ jobs:
             image: samyarsadat/service_images
             image_tag: microros-build-action-latest
             dockerfile_path: ./service_images/microros_build_action/Dockerfile_latest
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
