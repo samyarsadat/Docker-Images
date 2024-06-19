@@ -1,0 +1,27 @@
+name: Analyze all SERVICE images
+on: 
+    push:
+    schedule:
+        - cron: '50 16 * * MON'   # Every Monday at 4:50 PM UTC
+
+jobs:
+    serverpi_caddy_latest:
+        name: ServerPi Caddy Latest
+        uses: ./.github/workflows/analyze-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: serverpi-caddy-latest
+
+    pico_build_action_latest:
+        name: Pico Build Action Latest
+        uses: ./.github/workflows/analyze-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: pico-build-action-latest
+
+    microros_build_action_latest:
+        name: MicroROS Build Action Latest
+        uses: ./.github/workflows/analyze-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: microros-build-action-latest
