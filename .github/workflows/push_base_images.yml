@@ -47,7 +47,7 @@ jobs:
         uses: ./.github/workflows/build-image.yml
         with:
             image: samyarsadat/custom_base_images
-            image_tag: full-ros-humble
+            image_tag: desktop-full-ros-humble
             dockerfile_path: ./base_images/desktop_full_ros/Dockerfile_humble
             architectures: "linux/amd64"   # OSRF Profile ROS images are only available for AMD64
         secrets:
