@@ -38,5 +38,5 @@ jobs:
         uses: ./.github/workflows/analyze-image.yml
         with:
             image: samyarsadat/custom_base_images
-            image_tag: full-ros-humble
-            analysis_name: full-ros-humble
+            image_tag: desktop-full-ros-humble
+            analysis_name: desktop-full-ros-humble
