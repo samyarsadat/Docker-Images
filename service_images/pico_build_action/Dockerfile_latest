@@ -35,5 +35,6 @@ RUN mkdir /pico && cd /pico \
     && cd pico-sdk \
     && git submodule update --init
 
-# Set Pico SDK path
+# Set Pico SDK path & compiler
 ENV PICO_SDK_PATH=/pico/pico-sdk
+ENV PICO_COMPILER=pico_arm_gcc
