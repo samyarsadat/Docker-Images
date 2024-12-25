@@ -33,6 +33,14 @@ jobs:
             image_tag: base-ros-humble
             analysis_name: base-ros-humble
 
+    base_ros_vulcanexus_humble:
+        name: Base ROS Humble w/ Vulcanexus
+        uses: ./.github/workflows/analyze-image.yml
+        with:
+            image: samyarsadat/custom_base_images
+            image_tag: base-ros-vulcanexus-humble
+            analysis_name: base-ros-vulcanexus-humble
+
     full_ros_humble:
         name: Full Desktop ROS Humble
         uses: ./.github/workflows/analyze-image.yml
