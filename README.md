@@ -69,4 +69,4 @@ If you think that you have found a bug or issue please report it <a href="[ISSUE
 <br><br>
 
 
-Copyright © 2024 Samyar Sadat Akhavi.
+Copyright © 2024-2025 Samyar Sadat Akhavi.

@@ -29,13 +29,15 @@ RUN apt-get update \
     && apt-get install -y git nano curl ros-${ROS_DISTRO}-ros-gz \
     && rm -rf /var/lib/apt/lists/* && apt-get autoremove && apt-get autoclean
 
+# I reject your default non-root user, and substitute my own!
+RUN touch /var/mail/ubuntu && chown ubuntu /var/mail/ubuntu && userdel -r ubuntu
+
 # Create non-root user
 ARG USERNAME=nonroot
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 ENV USER_HOME=/home/$USERNAME
 
-USER root
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
     && mkdir /home/$USERNAME/.config && chown -R $USER_UID:$USER_GID /home/$USERNAME/
