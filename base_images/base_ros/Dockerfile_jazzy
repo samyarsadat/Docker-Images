@@ -1,0 +1,50 @@
+#  Docker Images - ROS 2 Jazzy Image (Base - No GUI apps)
+#  Copyright 2025 Samyar Sadat Akhavi
+#  Written by Samyar Sadat Akhavi, 2025.
+#
+#  This program is free software: you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation, either version 3 of the License, or
+#  (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program.  If not, see <https: www.gnu.org/licenses/>.
+
+FROM ros:jazzy
+
+
+# Metadata
+LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
+LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
+LABEL org.opencontainers.image.description="SSA Docker Images: ROS 2 Jazzy Image (Base - No GUI apps)"
+LABEL org.opencontainers.image.licenses=GPL-3.0
+
+# Install git, nano, and curl
+RUN apt-get update \
+    && apt-get install -y git nano curl \
+    && rm -rf /var/lib/apt/lists/* && apt-get autoremove && apt-get autoclean
+
+# Create non-root user
+ARG USERNAME=nonroot
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+ENV USER_HOME=/home/$USERNAME
+
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && mkdir /home/$USERNAME/.config && chown -R $USER_UID:$USER_GID /home/$USERNAME/
+
+# Install and configure SUDO
+RUN apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME \
+    && rm -rf /var/lib/apt/lists/* && apt-get autoremove && apt-get autoclean
+
+# Environment setup
+USER root

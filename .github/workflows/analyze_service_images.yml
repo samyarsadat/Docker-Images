@@ -25,10 +25,27 @@ jobs:
             image_tag: pico-build-action-latest
             analysis_name: pico-build-action-latest
 
-    microros_build_action_latest:
-        name: MicroROS Build Action Latest
+    # No need to analyze latest. It is (currently) the same as Humble.
+    # microros_build_action_latest:
+    #     name: MicroROS Build Action Latest
+    #     uses: ./.github/workflows/analyze-image.yml
+    #     with:
+    #         image: samyarsadat/service_images
+    #         image_tag: microros-build-action-latest
+    #         analysis_name: microros-build-action-latest
+
+    microros_build_action_humble:
+        name: MicroROS Build Action Humble
         uses: ./.github/workflows/analyze-image.yml
         with:
             image: samyarsadat/service_images
-            image_tag: microros-build-action-latest
-            analysis_name: microros-build-action-latest
+            image_tag: microros-build-action-humble
+            analysis_name: microros-build-action-humble
+
+    microros_build_action_jazzy:
+        name: MicroROS Build Action Jazzy
+        uses: ./.github/workflows/analyze-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: microros-build-action-jazzy
+            analysis_name: microros-build-action-jazzy

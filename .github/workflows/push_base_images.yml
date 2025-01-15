@@ -2,7 +2,7 @@ name: Push all BASE images to Docker Hub
 on: 
     push:
     schedule:
-        - cron: '30 16 * * MON'   # Every Monday at 4:30 PM UTC
+        - cron: '25 14 * * MON'   # Every Monday at 2:25 PM UTC
 
 permissions:
     packages: write
@@ -16,6 +16,17 @@ jobs:
             image: samyarsadat/custom_base_images
             image_tag: default-ubuntu-22.04
             dockerfile_path: ./base_images/default_ubuntu/Dockerfile_22-04
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
+    default_ubuntu_noble:
+        name: Default Ubuntu 24.04
+        uses: ./.github/workflows/build-image.yml
+        with:
+            image: samyarsadat/custom_base_images
+            image_tag: default-ubuntu-24.04
+            dockerfile_path: ./base_images/default_ubuntu/Dockerfile_24-04
         secrets:
             DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
             DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
@@ -42,6 +53,17 @@ jobs:
             DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
             DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
 
+    base_ros_jazzy:
+        name: Base ROS Jazzy
+        uses: ./.github/workflows/build-image.yml
+        with:
+            image: samyarsadat/custom_base_images
+            image_tag: base-ros-jazzy
+            dockerfile_path: ./base_images/base_ros/Dockerfile_jazzy
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
     base_ros_vulcanexus_humble:
         name: Base ROS Humble w/ Vulcanexus
         uses: ./.github/workflows/build-image.yml
@@ -53,6 +75,17 @@ jobs:
             DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
             DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
 
+    base_ros_vulcanexus_jazzy:
+        name: Base ROS Jazzy w/ Vulcanexus
+        uses: ./.github/workflows/build-image.yml
+        with:
+            image: samyarsadat/custom_base_images
+            image_tag: base-ros-vulcanexus-jazzy
+            dockerfile_path: ./base_images/base_ros_vulcanexus/Dockerfile_jazzy
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
     full_ros_humble:
         name: Full Desktop ROS Humble
         uses: ./.github/workflows/build-image.yml
@@ -60,6 +93,18 @@ jobs:
             image: samyarsadat/custom_base_images
             image_tag: desktop-full-ros-humble
             dockerfile_path: ./base_images/desktop_full_ros/Dockerfile_humble
+            architectures: "linux/amd64"   # OSRF Profile ROS images are only available for AMD64
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
+    full_ros_jazzy:
+        name: Full Desktop ROS Jazzy
+        uses: ./.github/workflows/build-image.yml
+        with:
+            image: samyarsadat/custom_base_images
+            image_tag: desktop-full-ros-jazzy
+            dockerfile_path: ./base_images/desktop_full_ros/Dockerfile_jazzy
             architectures: "linux/amd64"   # OSRF Profile ROS images are only available for AMD64
         secrets:
             DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}

@@ -2,7 +2,7 @@ name: Push all SERVICE images to Docker Hub
 on: 
     push:
     schedule:
-        - cron: '30 16 * * MON'   # Every Monday at 4:30 PM UTC
+        - cron: '25 16 * * MON'   # Every Monday at 4:25 PM UTC
 
 permissions:
     packages: write
@@ -38,6 +38,28 @@ jobs:
             image: samyarsadat/service_images
             image_tag: microros-build-action-latest
             dockerfile_path: ./service_images/microros_build_action/Dockerfile_latest
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
+    microros_build_action_humble:
+        name: MicroROS Build Action Humble
+        uses: ./.github/workflows/build-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: microros-build-action-humble
+            dockerfile_path: ./service_images/microros_build_action/Dockerfile_humble
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
+    microros_build_action_jazzy:
+        name: MicroROS Build Action Jazzy
+        uses: ./.github/workflows/build-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: microros-build-action-jazzy
+            dockerfile_path: ./service_images/microros_build_action/Dockerfile_jazzy
         secrets:
             DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
             DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
