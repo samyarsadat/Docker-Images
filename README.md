@@ -64,7 +64,7 @@ If you think that you have found a bug or issue please report it <a href="[ISSUE
 ## Credits
 | Role           | Name                                                             |
 | -------------- | ---------------------------------------------------------------- |
-| Developer      | <a href="https://github.com/samyarsadat">Samyar Sadat Akhavi</a> |
+| Maintainer     | <a href="https://github.com/samyarsadat">Samyar Sadat Akhavi</a> |
 
 <br><br>
 
