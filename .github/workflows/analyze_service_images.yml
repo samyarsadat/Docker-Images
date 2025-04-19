@@ -2,7 +2,7 @@ name: Analyze all SERVICE images
 on: 
     push:
     schedule:
-        - cron: '50 16 * * MON'   # Every Monday at 4:50 PM UTC
+        - cron: '50 17 * * MON'   # Every Monday at 5:50 PM UTC
 
 permissions:
     security-events: write
@@ -58,10 +58,11 @@ jobs:
             image_tag: microros-build-action-jazzy
             analysis_name: microros-build-action-jazzy
 
-    excalidraw_arm64_latest:
-        name: Excalidraw ARM64 Latest
-        uses: ./.github/workflows/analyze-image.yml
-        with:
-            image: samyarsadat/service_images
-            image_tag: excalidraw-arm64-latest
-            analysis_name: excalidraw-arm64-latest
+    # This is an ARM64-only image. See: https://github.com/aquasecurity/trivy-operator/issues/1469
+    # excalidraw_arm64_latest:
+    #     name: Excalidraw ARM64 Latest
+    #     uses: ./.github/workflows/analyze-image.yml
+    #     with:
+    #         image: samyarsadat/service_images
+    #         image_tag: excalidraw-arm64-latest
+    #         analysis_name: excalidraw-arm64-latest

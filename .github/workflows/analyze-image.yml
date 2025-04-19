@@ -28,7 +28,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Run Trivy Vulnerability Scanner
-              uses: aquasecurity/trivy-action@0.23.0
+              uses: aquasecurity/trivy-action@0.30.0
               with:
                   image-ref: "docker.io/${{inputs.image}}:${{inputs.image_tag}}"
                   format: "template"
