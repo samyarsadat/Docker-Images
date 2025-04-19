@@ -76,7 +76,7 @@ jobs:
             DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
         
     excalidraw_arm64_latest:
-        name: ExcaliDraw ARM64 Latest
+        name: Excalidraw ARM64 Latest
         uses: ./.github/workflows/build-image.yml
         with:
             image: samyarsadat/service_images

@@ -43,6 +43,7 @@ For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `Do
 | `serverpi_wgeasy`       | The WireGuard-Easy image that is used by ServerPi | `serverpi-wgeasy-latest`                                                                              | `linux/amd64`, `linux/arm64` | `service_images`          |
 | `pico_build_action`     | Raspberry Pi Pico GitHub build action image       | `pico-build-action-latest`                                                                            | `linux/amd64`, `linux/arm64` | `service_images`          |
 | `microros_build_action` | MicroROS GitHub build action image                | `microros-build-action-latest`,<br> `microros-build-action-humble`,<br> `microros-build-action-jazzy` | `linux/amd64`, `linux/arm64` | `service_images`          |
+| `excalidraw_arm64`      | Excalidraw image for ARM64                        | `excalidraw-arm64-latest`                                                                             | `linux/arm64`                | `service_images`          |
 
 <br>
 
