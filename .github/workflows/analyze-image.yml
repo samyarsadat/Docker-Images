@@ -18,7 +18,7 @@ on:
 jobs:
     analyze_image:
         name: Analyze ${{inputs.image}}:${{inputs.image_tag}}
-        runs-on: "ubuntu-20.04"
+        runs-on: ubuntu-latest
         permissions:
             contents: read
             security-events: write
