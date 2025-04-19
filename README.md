@@ -26,22 +26,23 @@ For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `Do
 <br>
 
 ### Docker Hub
-**Base Images**: _https://hub.docker.com/r/samyarsadat/custom_base_images_\
+**Base Images**: _https://hub.docker.com/r/samyarsadat/custom_base_images_ \
 **Service Images**: _https://hub.docker.com/r/samyarsadat/service_images_
 
 <br>
 
 ### List of Docker Images
-| Name                    | Description                                   | Tags                                                                                                  | Architectures                | Docker Hub Repository     |
-| ----------------------- | --------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------- |
-| `default_alpine`        | Default Alpine Linux images                   | `default-alpine-latest`                                                                               | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `default_ubuntu`        | Default Ubuntu images                         | `default-ubuntu-22.04`,<br> `default-ubuntu-24.04`                                                    | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `base_ros`              | Default ROS Base images                       | `base-ros-humble`,<br> `base-ros-jazzy`                                                               | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `base_ros_vulcanexus`   | Default ROS Base images w/ Vulcanexus         | `base-ros-vulcanexus-humble`,<br> `base-ros-vulcanexus-jazzy`                                         | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `desktop_full_ros`      | Default ROS Full Desktop w/ Gazebo images     | `desktop-full-ros-humble`,<br> `desktop-full-ros-jazzy`                                               | `linux/amd64`                | `custom_base_images`      |
-| `serverpi_caddy`        | The Caddy V2 image that is used by ServerPi   | `serverpi-caddy-latest`                                                                               | `linux/amd64`, `linux/arm64` | `service_images`          |
-| `pico_build_action`     | Raspberry Pi Pico GitHub build action image   | `pico-build-action-latest`                                                                            | `linux/amd64`, `linux/arm64` | `service_images`          |
-| `microros_build_action` | MicroROS GitHub build action image            | `microros-build-action-latest`,<br> `microros-build-action-humble`,<br> `microros-build-action-jazzy` | `linux/amd64`, `linux/arm64` | `service_images`          |
+| Name                    | Description                                       | Tags                                                                                                  | Architectures                | Docker Hub Repository     |
+| ----------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------- |
+| `default_alpine`        | Default Alpine Linux images                       | `default-alpine-latest`                                                                               | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `default_ubuntu`        | Default Ubuntu images                             | `default-ubuntu-22.04`,<br> `default-ubuntu-24.04`                                                    | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `base_ros`              | Default ROS Base images                           | `base-ros-humble`,<br> `base-ros-jazzy`                                                               | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `base_ros_vulcanexus`   | Default ROS Base images w/ Vulcanexus             | `base-ros-vulcanexus-humble`,<br> `base-ros-vulcanexus-jazzy`                                         | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `desktop_full_ros`      | Default ROS Full Desktop w/ Gazebo images         | `desktop-full-ros-humble`,<br> `desktop-full-ros-jazzy`                                               | `linux/amd64`                | `custom_base_images`      |
+| `serverpi_caddy`        | The Caddy V2 image that is used by ServerPi       | `serverpi-caddy-latest`                                                                               | `linux/amd64`, `linux/arm64` | `service_images`          |
+| `serverpi_wgeasy`       | The WireGuard-Easy image that is used by ServerPi | `serverpi-wgeasy-latest`                                                                              | `linux/amd64`, `linux/arm64` | `service_images`          |
+| `pico_build_action`     | Raspberry Pi Pico GitHub build action image       | `pico-build-action-latest`                                                                            | `linux/amd64`, `linux/arm64` | `service_images`          |
+| `microros_build_action` | MicroROS GitHub build action image                | `microros-build-action-latest`,<br> `microros-build-action-humble`,<br> `microros-build-action-jazzy` | `linux/amd64`, `linux/arm64` | `service_images`          |
 
 <br>
 
