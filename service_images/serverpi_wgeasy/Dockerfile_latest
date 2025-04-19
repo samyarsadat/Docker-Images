@@ -21,7 +21,7 @@ FROM ghcr.io/wg-easy/wg-easy
 COPY --from=builder /bin/wireguard_exporter /bin/wireguard_exporter
 
 # Entrypoint
-COPY ./entrypoint_latest.sh /entrypoint.sh
+COPY service_images/serverpi_wgeasy/entrypoint_latest.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
 
