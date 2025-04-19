@@ -1,0 +1,30 @@
+# Docker Images - WireGuard-Easy w/ WireGuard Exporter Image (Latest)
+# This image is used by ServerPi.
+# Copyright 2025 Samyar Sadat Akhavi
+# Written by Samyar Sadat Akhavi, 2025.
+# Licensed under the MIT License.
+
+FROM golang:1.22-bookworm AS builder
+
+# Build and install wireguard_exporter
+RUN mkdir -p /tmp/wireguard_exporter && cd /tmp/wireguard_exporter \
+    && git clone https://github.com/mdlayher/wireguard_exporter . \
+    && cd ./cmd/wireguard_exporter/ \
+    && go build -tags netgo . \
+    && mv wireguard_exporter /bin/wireguard_exporter \
+    && cd / && rm -rf /tmp/wireguard_exporter
+
+# WireGuard VPN Server Docker Image
+FROM ghcr.io/wg-easy/wg-easy
+
+# Bring in wireguard_exporter
+COPY --from=builder /bin/wireguard_exporter /bin/wireguard_exporter
+
+# Entrypoint
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
+
+# Run WireGuard-Easy
+WORKDIR /app
+CMD ["/usr/bin/dumb-init", "node", "server.js"]

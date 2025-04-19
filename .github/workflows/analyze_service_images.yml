@@ -17,6 +17,14 @@ jobs:
             image_tag: serverpi-caddy-latest
             analysis_name: serverpi-caddy-latest
 
+    serverpi_wgeasy_latest:
+        name: ServerPi WireGuard-Easy Latest
+        uses: ./.github/workflows/analyze-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: serverpi-wgeasy-latest
+            analysis_name: serverpi-wgeasy-latest
+
     pico_build_action_latest:
         name: Pico Build Action Latest
         uses: ./.github/workflows/analyze-image.yml

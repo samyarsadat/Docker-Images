@@ -1,19 +1,7 @@
-#  Docker Images - MicroROS GitHub Build Action Image (ROS 2 Jazzy)
-#  Copyright 2025 Samyar Sadat Akhavi
-#  Written by Samyar Sadat Akhavi, 2025.
-#
-#  This program is free software: you can redistribute it and/or modify
-#  it under the terms of the GNU General Public License as published by
-#  the Free Software Foundation, either version 3 of the License, or
-#  (at your option) any later version.
-#
-#  This program is distributed in the hope that it will be useful,
-#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#  GNU General Public License for more details.
-#
-#  You should have received a copy of the GNU General Public License
-#  along with this program.  If not, see <https: www.gnu.org/licenses/>.
+# Docker Images - MicroROS GitHub Build Action Image (ROS 2 Jazzy)
+# Copyright 2025 Samyar Sadat Akhavi
+# Written by Samyar Sadat Akhavi, 2025.
+# Licensed under the MIT License.
 
 FROM ros:jazzy
 
@@ -21,7 +9,6 @@ FROM ros:jazzy
 LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
 LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
 LABEL org.opencontainers.image.description="SSA Docker Images: MicroROS Build Action (ROS 2 Jazzy)"
-LABEL org.opencontainers.image.licenses=GPL-3.0
 
 # Install dependencies
 RUN apt-get update \

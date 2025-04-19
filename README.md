@@ -12,21 +12,24 @@
 
 
 ----
-This repository contains all of my custom base and service-specific Docker images.<br>
-Base images are generic. They have a few standard packages installed but are otherwise non-specific.<br>
-Service images are for a specific use case. They are not meant to be generic.<br>
+This repository contains all of my custom base and service-specific Docker images.\
+Base images are generic. They have a few standard packages installed but are otherwise non-specific.\
+Service images are for a specific use case. They are not meant to be generic.
+
+<br>
 
 ### Repository Structure
-Service images are in `/service_images` and base images in `/base_images`.<br>
-Each image in these directories may contain several Dockerfiles for each version of the image.<br>
-For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `Dockerfile_22-04` and another named `Dockerfile_24-04` 
-for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
-<br><br>
+Service images are in `/service_images` and base images in `/base_images`.\
+Each image in these directories may contain several Dockerfiles for each version of the image.\
+For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `Dockerfile_22-04` and another named `Dockerfile_24-04` for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
+
+<br>
 
 ### Docker Hub
-**Base Images**: _https://hub.docker.com/r/samyarsadat/custom_base_images_<br>
+**Base Images**: _https://hub.docker.com/r/samyarsadat/custom_base_images_\
 **Service Images**: _https://hub.docker.com/r/samyarsadat/service_images_
-<br><br>
+
+<br>
 
 ### List of Docker Images
 | Name                    | Description                                   | Tags                                                                                                  | Architectures                | Docker Hub Repository     |
@@ -54,19 +57,19 @@ for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
 <br>
 
 ## Contact
-You can contact me via e-mail.<br>
+You can contact me via e-mail.\
 E-mail: samyarsadat@gigawhat.net
-<br><br>
-If you think that you have found a bug or issue please report it <a href="[ISSUES_URL]">here</a>.
-<br><br>
 
+If you think that you have found a bug or issue please report it <a href="../../issues">here</a>.
+
+<br>
 
 ## Credits
 | Role           | Name                                                             |
 | -------------- | ---------------------------------------------------------------- |
 | Maintainer     | <a href="https://github.com/samyarsadat">Samyar Sadat Akhavi</a> |
 
-<br><br>
-
+<br>
+<br>
 
 Copyright © 2024-2025 Samyar Sadat Akhavi.

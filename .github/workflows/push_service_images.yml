@@ -20,6 +20,17 @@ jobs:
             DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
             DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
 
+    serverpi_wgeasy_latest:
+        name: ServerPi WireGuard-Easy Latest
+        uses: ./.github/workflows/build-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: serverpi-wgeasy-latest
+            dockerfile_path: ./service_images/serverpi_wgeasy/Dockerfile_latest
+        secrets:
+            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
+            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+
     pico_build_action_latest:
         name: Pico Build Action Latest
         uses: ./.github/workflows/build-image.yml
