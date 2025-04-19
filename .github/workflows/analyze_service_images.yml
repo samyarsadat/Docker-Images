@@ -57,3 +57,11 @@ jobs:
             image: samyarsadat/service_images
             image_tag: microros-build-action-jazzy
             analysis_name: microros-build-action-jazzy
+
+    excalidraw_arm64_latest:
+        name: Excalidraw ARM64 Latest
+        uses: ./.github/workflows/analyze-image.yml
+        with:
+            image: samyarsadat/service_images
+            image_tag: excalidraw-arm64-latest
+            analysis_name: excalidraw-arm64-latest

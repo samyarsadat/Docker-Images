@@ -1,0 +1,26 @@
+# Docker Images - Excalidraw image for ARM64 (Latest)
+# This image is used by ServerPi.
+# Copyright 2025 Samyar Sadat Akhavi
+# Written by Samyar Sadat Akhavi, 2025.
+# Licensed under the MIT License.
+
+# Step 1: Build the Excalidraw app
+FROM node:18 AS build
+
+WORKDIR /opt/node_app
+RUN git clone https://github.com/excalidraw/excalidraw.git .
+
+# Install dependencies and build the app
+RUN yarn --network-timeout 600000
+ARG NODE_ENV=production
+RUN yarn build:app:docker
+
+# Step 2: Create the final image using nginx
+FROM nginx:1.27-alpine
+COPY --from=build /opt/node_app/excalidraw-app/build /usr/share/nginx/html
+HEALTHCHECK CMD wget -q -O /dev/null http://localhost || exit 1
+
+# Metadata
+LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
+LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
+LABEL org.opencontainers.image.description="SSA Docker Images: Excalidraw Image for ARM64 (Latest)"

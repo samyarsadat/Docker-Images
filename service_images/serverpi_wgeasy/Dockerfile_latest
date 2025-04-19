@@ -28,3 +28,8 @@ ENTRYPOINT ["/entrypoint.sh"]
 # Run WireGuard-Easy
 WORKDIR /app
 CMD ["/usr/bin/dumb-init", "node", "server.js"]
+
+# Metadata
+LABEL org.opencontainers.image.source=https://github.com/samyarsadat/Docker-Images
+LABEL org.opencontainers.image.authors="Samyar Sadat Akhavi <samyarsadat@gigawhat.net>"
+LABEL org.opencontainers.image.description="SSA Docker Images: ServerPi WireGuard-Easy Image (Latest)"
