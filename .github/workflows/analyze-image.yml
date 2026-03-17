@@ -25,7 +25,7 @@ jobs:
 
         steps:
             - name: Checkout Repository
-              uses: actions/checkout@v4
+              uses: actions/checkout@v6
 
             - name: Run Trivy Vulnerability Scanner
               uses: aquasecurity/trivy-action@0.35.0
@@ -39,6 +39,6 @@ jobs:
                   limit-severities-for-sarif: true
 
             - name: Upload Trivy Scan Results
-              uses: github/codeql-action/upload-sarif@v3
+              uses: github/codeql-action/upload-sarif@v4
               with:
                   sarif_file: "trivy-results_${{inputs.analysis_name}}.sarif"
