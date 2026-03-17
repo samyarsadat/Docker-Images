@@ -5,7 +5,7 @@
 # Licensed under the MIT License.
 
 # Step 1: Build the Excalidraw app
-FROM node:18 AS build
+FROM node:24 AS build
 
 WORKDIR /opt/node_app
 RUN git clone https://github.com/excalidraw/excalidraw.git .
@@ -16,7 +16,7 @@ ARG NODE_ENV=production
 RUN yarn build:app:docker
 
 # Step 2: Create the final image using nginx
-FROM nginx:1.27-alpine
+FROM nginx:1.28-alpine
 COPY --from=build /opt/node_app/excalidraw-app/build /usr/share/nginx/html
 HEALTHCHECK CMD wget -q -O /dev/null http://localhost || exit 1
 
