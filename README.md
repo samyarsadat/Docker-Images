@@ -16,26 +16,27 @@ This repository contains all of my custom base and service-specific Docker image
 Base images are generic. They have a few standard packages installed but are otherwise non-specific.\
 Service images are for a specific use case. They are not meant to be generic.
 
-<br>
+### Status
+
+[![Build & Push All Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml)
 
 ### Repository Structure
+
 Service images are in `/service_images` and base images in `/base_images`.\
 Each image in these directories may contain several Dockerfiles for each version of the image.\
-For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `Dockerfile_22-04` and another named `Dockerfile_24-04` for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
-
-<br>
+For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `22.04.Dockerfile` and another named `24.04.Dockerfile` for Ubuntu 22.04 and Ubuntu 24.04 versions respectively.
 
 ### Docker Hub
-**Base Images**: _https://hub.docker.com/r/samyarsadat/custom_base_images_ \
-**Service Images**: _https://hub.docker.com/r/samyarsadat/service_images_
 
-<br>
+**Base Images**: https://hub.docker.com/r/samyarsadat/custom_base_images \
+**Service Images**: https://hub.docker.com/r/samyarsadat/service_images
 
 ### List of Docker Images
+
 | Name                    | Description                                       | Tags                                                                                                  | Architectures                | Docker Hub Repository     |
 | ----------------------- | ------------------------------------------------- | ----------------------------------------------------------------------------------------------------- | ---------------------------- | ------------------------- |
 | `default_alpine`        | Default Alpine Linux images                       | `default-alpine-latest`                                                                               | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
-| `default_ubuntu`        | Default Ubuntu images                             | `default-ubuntu-22.04`,<br> `default-ubuntu-24.04`                                                    | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
+| `default_ubuntu`        | Default Ubuntu images                             | `default-ubuntu-22.04`,<br> `default-ubuntu-24.04`,<br> `default-ubuntu-26.04`                        | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
 | `base_ros`              | Default ROS Base images                           | `base-ros-humble`,<br> `base-ros-jazzy`                                                               | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
 | `base_ros_vulcanexus`   | Default ROS Base images w/ Vulcanexus             | `base-ros-vulcanexus-humble`,<br> `base-ros-vulcanexus-jazzy`                                         | `linux/amd64`, `linux/arm64` | `custom_base_images`      |
 | `desktop_full_ros`      | Default ROS Full Desktop w/ Gazebo images         | `desktop-full-ros-humble`,<br> `desktop-full-ros-jazzy`                                               | `linux/amd64`                | `custom_base_images`      |
@@ -46,18 +47,8 @@ For instance, `/base_images/default_ubuntu` may contain one Dockerfile named `Do
 
 <br>
 
-### Status
-[![Push base images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_base_images.yml)
-<br>
-[![Push service images to Docker Hub](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_service_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_service_images.yml)
-<br>
-[![Analyze all BASE images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_base_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_base_images.yml)
-<br>
-[![Analyze all SERVICE images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_service_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_service_images.yml)
-
-<br>
-
 ## Contact
+
 You can contact me via e-mail.\
 E-mail: samyarsadat@gigawhat.net
 
@@ -66,11 +57,12 @@ If you think that you have found a bug or issue please report it <a href="../../
 <br>
 
 ## Credits
+
 | Role           | Name                                                             |
 | -------------- | ---------------------------------------------------------------- |
 | Maintainer     | <a href="https://github.com/samyarsadat">Samyar Sadat Akhavi</a> |
 
 <br>
-<br>
 
-Copyright © 2024-2025 Samyar Sadat Akhavi.
+---
+Copyright © 2024-2026 Samyar Sadat Akhavi.

@@ -10,7 +10,7 @@ LABEL org.opencontainers.image.description="Default Ubuntu (22.04 - Jammy Jellyf
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
-       git nano curl sudo \
+       git nano curl sudo ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 

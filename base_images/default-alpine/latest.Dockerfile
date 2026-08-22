@@ -8,7 +8,7 @@ FROM alpine:latest
 LABEL org.opencontainers.image.description="Default Alpine Latest"
 
 # Install required packages
-RUN apk add --no-cache bash git nano curl sudo
+RUN apk add --no-cache bash git nano curl sudo ca-certificates
 
 # Create non-root user
 ARG USERNAME=nonroot
