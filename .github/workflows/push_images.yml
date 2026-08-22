@@ -1,4 +1,4 @@
-name: Image Discovery, Build & Push to DockerHub
+name: Build & Push All Images
 on: 
     push:
     schedule:
@@ -10,6 +10,7 @@ permissions:
 
 jobs:
     discover:
+        name: Generate Build Matrix
         runs-on: ubuntu-latest
         outputs:
             matrix: ${{steps.discover.outputs.matrix}}
@@ -27,7 +28,7 @@ jobs:
 
     build:
         needs: discover
-        name: Build & Push All Images
+        name: ${{matrix.tag}}
         uses: ./.github/workflows/build_image.yml
         strategy:
             fail-fast: false

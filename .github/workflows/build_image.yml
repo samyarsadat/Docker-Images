@@ -28,7 +28,7 @@ on:
 
 jobs:
     push_image:
-        name: Build & Push ${{inputs.image}}:${{inputs.image_tag}}
+        name: Build & Push
         runs-on: ubuntu-latest
         permissions:
             contents: read

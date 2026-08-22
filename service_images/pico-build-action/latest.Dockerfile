@@ -11,7 +11,7 @@ LABEL org.opencontainers.image.description="Pico Build Action (Latest)"
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
        git python3 rsync cmake gcc-arm-none-eabi libnewlib-arm-none-eabi \
-       libstdc++-arm-none-eabi-newlib build-essential \
+       libstdc++-arm-none-eabi-newlib build-essential ca-certificates \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
