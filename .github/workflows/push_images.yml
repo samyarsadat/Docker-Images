@@ -23,7 +23,7 @@ jobs:
               env:
                   BASE_IMAGES_REPO: ${{vars.BASE_IMAGES_REPO}}
                   SERVICE_IMAGES_REPO: ${{vars.SERVICE_IMAGES_REPO}}
-              run: echo "matrix=$(python3 .github/scripts/discover_images.py)" >> "$GITHUB_OUTPUT"
+              run: echo "matrix=$(python3 .github/scripts/image_discovery.py)" >> "$GITHUB_OUTPUT"
 
     build:
         needs: discover
