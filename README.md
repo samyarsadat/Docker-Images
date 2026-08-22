@@ -19,8 +19,8 @@ Service images are for a specific use case. They are not meant to be generic.
 ### CI Status
 
 Both auto-run weekly!\
-[![Build & Push All Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml) \
-[![Analyze All Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml)
+[![Build & Push Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/build_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/build_images.yml) \
+[![Analyze Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml)
 
 ### Repository Structure
 

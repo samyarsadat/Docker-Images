@@ -1,4 +1,4 @@
-name: Analyze All Images
+name: Analyze Images
 on: 
     push:
     schedule:
@@ -24,18 +24,34 @@ jobs:
               run: |
                 echo "matrix=$(python3 .github/scripts/image_discovery.py \
                     --analysis \
-                    --base-img-repo '${{ vars.BASE_IMAGES_REPO }}' \
-                    --svc-img-repo '${{ vars.SERVICE_IMAGES_REPO }}')" >> "$GITHUB_OUTPUT"
+                    --base-img-repo '${{vars.BASE_IMAGES_REPO}}' \
+                    --svc-img-repo '${{vars.SERVICE_IMAGES_REPO}}')" >> "$GITHUB_OUTPUT"
 
-    build:
+    analyze:
         needs: discover
         name: ${{matrix.tag}}
-        uses: ./.github/workflows/analyze_image.yml
+        runs-on: ubuntu-latest
         strategy:
             fail-fast: false
             matrix:
                 include: ${{fromJSON(needs.discover.outputs.matrix)}}
-        with:
-            image: ${{matrix.image}}
-            image_tag: ${{matrix.tag}}
-            analysis_name: ${{matrix.tag}}
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v6
+
+            - name: Run Trivy Vulnerability Scanner
+              uses: aquasecurity/trivy-action@v0.36.0
+              with:
+                  image-ref: "docker.io/${{matrix.image}}:}${{matrix.tag}}"
+                  format: "template"
+                  template: "@/contrib/sarif.tpl"
+                  output: "trivy-results_${{matrix.tag}}.sarif"
+                  scanners: "vuln,secret,config"
+                  severity: "CRITICAL,HIGH"
+                  limit-severities-for-sarif: true
+
+            - name: Upload Trivy Scan Results
+              uses: github/codeql-action/upload-sarif@v4
+              with:
+                  sarif_file: "trivy-results_${{matrix.tag}}.sarif"
