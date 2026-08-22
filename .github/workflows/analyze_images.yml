@@ -1,11 +1,11 @@
-name: Build & Push All Images
+name: Analyze All Images
 on: 
     push:
     schedule:
         - cron: '25 17 * * MON'   # Every Monday at 5:25 PM UTC
 
 permissions:
-    packages: write
+    security-events: write
     contents: read
 
 jobs:
