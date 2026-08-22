@@ -3,21 +3,21 @@ on:
     workflow_call:
         inputs:
             image: 
-                description: "The image to analyze."
+                description: "the image to analyze"
                 required: true
                 type: string
             image_tag:
-                description: "The tag of the image to analyze."
+                description: "the tag of the image to analyze"
                 required: true
                 type: string
             analysis_name:
-                description: "The name of the analysis. This will be used in the output file name. It should be unique for each analysis."
+                description: "the name of the analysis, should be unique for each analysis"
                 required: true
                 type: string
 
 jobs:
     analyze_image:
-        name: Analyze ${{inputs.image}}:${{inputs.image_tag}}
+        name: Trivy Analyze
         runs-on: ubuntu-latest
         permissions:
             contents: read

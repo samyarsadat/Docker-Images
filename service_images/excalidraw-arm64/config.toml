@@ -2,3 +2,5 @@
 build_platforms = [
     "linux/arm64"
 ]
+
+analysis_ignore = "all"

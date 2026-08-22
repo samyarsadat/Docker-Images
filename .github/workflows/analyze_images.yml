@@ -2,7 +2,7 @@ name: Build & Push All Images
 on: 
     push:
     schedule:
-        - cron: '25 14 * * MON'   # Every Monday at 2:25 PM UTC
+        - cron: '25 17 * * MON'   # Every Monday at 5:25 PM UTC
 
 permissions:
     packages: write
@@ -10,7 +10,7 @@ permissions:
 
 jobs:
     discover:
-        name: Generate Build Matrix
+        name: Generate Analysis Matrix
         runs-on: ubuntu-latest
         outputs:
             matrix: ${{steps.discover.outputs.matrix}}
@@ -22,13 +22,14 @@ jobs:
             - name: Discover Images
               id: discover
               run: echo "matrix=$(python3 .github/scripts/image_discovery.py \
+                    --analysis \
                     --base-img-repo '${{vars.BASE_IMAGES_REPO}}' \
                     --svc-img-repo '${{vars.SERVICE_IMAGES_REPO}}')" >> "$GITHUB_OUTPUT"
 
     build:
         needs: discover
         name: ${{matrix.tag}}
-        uses: ./.github/workflows/build_image.yml
+        uses: ./.github/workflows/analyze_image.yml
         strategy:
             fail-fast: false
             matrix:
@@ -36,8 +37,4 @@ jobs:
         with:
             image: ${{matrix.image}}
             image_tag: ${{matrix.tag}}
-            dockerfile_path: ${{matrix.dockerfile}}
-            platforms: ${{matrix.platforms}}
-        secrets:
-            DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-            DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+            analysis_name: ${{matrix.tag}}
