@@ -1,0 +1,4 @@
+# Override default build platforms
+build_platforms = [
+    "linux/arm64"
+]

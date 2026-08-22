@@ -3,28 +3,27 @@ on:
     workflow_call:
         inputs:
             image: 
-                description: "The image to build."
+                description: "the image to build"
                 required: true
                 type: string
             image_tag:
-                description: "The tag of the image to build."
+                description: "the tag of the image to build"
                 required: true
                 type: string
             dockerfile_path:
-                description: "The path to the Dockerfile."
+                description: "the path to the Dockerfile"
                 required: true
                 type: string
-            architectures:
-                description: "The architectures to build the image for."
-                default: "linux/arm64,linux/amd64"
-                required: false
+            platforms:
+                description: "the platforms to build the image for"
+                required: true
                 type: string
         secrets: 
             DOCKER_USERNAME: 
-                description: "Docker Hub username."
+                description: "DockerHub username"
                 required: true
             DOCKER_PASSWORD:
-                description: "Docker Hub password."
+                description: "DockerHub password"
                 required: true
 
 jobs:
@@ -32,7 +31,6 @@ jobs:
         name: Build & Push ${{inputs.image}}:${{inputs.image_tag}}
         runs-on: ubuntu-latest
         permissions:
-            packages: write
             contents: read
 
         steps:
@@ -46,12 +44,13 @@ jobs:
               uses: docker/setup-buildx-action@v4
 
             - name: Log in to Docker Hub
+              if: github.event_name != 'pull_request'
               uses: docker/login-action@v4
               with:
                   username: ${{secrets.DOCKER_USERNAME}}
                   password: ${{secrets.DOCKER_PASSWORD}}
 
-            - name: Extract Metadata (tags, labels) for Docker
+            - name: Extract Metadata for Docker
               id: meta
               uses: docker/metadata-action@v6
               with:
@@ -63,7 +62,10 @@ jobs:
               with:
                   context: .
                   file: ${{inputs.dockerfile_path}}
-                  platforms: ${{inputs.architectures}}
-                  push: true
+                  platforms: ${{inputs.platforms}}
+                  pull: true
+                  push: ${{github.event_name != 'pull_request'}}
                   tags: ${{steps.meta.outputs.tags}}
                   labels: ${{steps.meta.outputs.labels}}
+                  cache-from: type=gha,scope=${{inputs.image_tag}}
+                  cache-to: type=gha,scope=${{inputs.image_tag}},mode=max
