@@ -16,9 +16,11 @@ This repository contains all of my custom base and service-specific Docker image
 Base images are generic. They have a few standard packages installed but are otherwise non-specific.\
 Service images are for a specific use case. They are not meant to be generic.
 
-### Status
+### CI Status
 
-[![Build & Push All Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml)
+Both auto-run weekly!\
+[![Build & Push All Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/push_images.yml) \
+[![Analyze All Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml)
 
 ### Repository Structure
 
