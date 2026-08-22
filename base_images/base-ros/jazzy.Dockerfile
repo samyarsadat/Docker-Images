@@ -4,9 +4,6 @@
 
 FROM ros:jazzy
 
-# Metadata
-LABEL org.opencontainers.image.description="ROS 2 Jazzy (Base - No GUI)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

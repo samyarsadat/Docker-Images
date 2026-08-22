@@ -4,9 +4,6 @@
 
 FROM ubuntu:resolute
 
-# Metadata
-LABEL org.opencontainers.image.description="Default Ubuntu (26.04 - Resolute Raccoon)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

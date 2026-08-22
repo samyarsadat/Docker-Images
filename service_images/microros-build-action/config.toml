@@ -1,4 +1,1 @@
-# No need to analyze 'latest', it is the same as 'humble'
-analysis_ignore = [
-    "latest"
-]
+description_fmt = "Micro-ROS Build Action (ros-{stem})"

@@ -1,6 +1,5 @@
-# Override default build platforms
+description_fmt = "Excalidraw Image for ARM64 ({stem})"
+analysis_ignore = "all"
 build_platforms = [
     "linux/arm64"
 ]
-
-analysis_ignore = "all"

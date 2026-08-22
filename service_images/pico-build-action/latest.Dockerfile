@@ -4,9 +4,6 @@
 
 FROM ubuntu:jammy
 
-# Metadata
-LABEL org.opencontainers.image.description="Pico Build Action (Latest)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

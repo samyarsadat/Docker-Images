@@ -16,9 +16,6 @@ RUN yarn build:app:docker
 # Step 2: Create the final image using nginx
 FROM nginx:mainline-alpine
 
-# Metadata
-LABEL org.opencontainers.image.description="Excalidraw Image for ARM64 (Latest)"
-
 # Copy built web app from build step
 COPY --from=build /opt/node_app/excalidraw-app/build /usr/share/nginx/html
 HEALTHCHECK CMD wget -q -O /dev/null http://localhost || exit 1

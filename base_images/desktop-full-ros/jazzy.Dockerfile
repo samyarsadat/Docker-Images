@@ -4,9 +4,6 @@
 
 FROM osrf/ros:jazzy-desktop-full
 
-# Metadata
-LABEL org.opencontainers.image.description="ROS 2 Jazzy (Full Desktop w/ Gazebo)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

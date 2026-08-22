@@ -1,4 +1,4 @@
-# Override default build platforms
+description_fmt = "ROS 2 Full Desktop with Gazebo (ros-{stem})"
 build_platforms = [
     "linux/amd64"
 ]

@@ -4,9 +4,6 @@
 
 FROM ubuntu:jammy
 
-# Metadata
-LABEL org.opencontainers.image.description="Default Ubuntu (22.04 - Jammy Jellyfish)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

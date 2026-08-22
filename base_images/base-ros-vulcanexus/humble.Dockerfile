@@ -4,9 +4,6 @@
 
 FROM eprosima/vulcanexus:humble-base
 
-# Metadata
-LABEL org.opencontainers.image.description="ROS 2 Humble Vulcanexus (Base - No GUI)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

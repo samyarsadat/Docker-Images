@@ -1,5 +1,13 @@
-# Default build platforms
+# Default image configuration
+[default_img_config]
+description_fmt = "No description!"
+analysis_ignore = []
 build_platforms = [
     "linux/amd64",
     "linux/arm64"
 ]
+
+# DockerHub root repositories
+[root_repos]
+base_images = "samyarsadat/custom_base_images"
+service_images = "samyarsadat/service_images"

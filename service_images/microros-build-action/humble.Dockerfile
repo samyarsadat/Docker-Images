@@ -4,9 +4,6 @@
 
 FROM ros:humble
 
-# Metadata
-LABEL org.opencontainers.image.description="Micro-ROS Build Action (ROS 2 Humble)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \

@@ -21,10 +21,7 @@ jobs:
 
             - name: Discover Images
               id: discover
-              run: |
-                echo "matrix=$(python3 .github/scripts/image_discovery.py \
-                    --base-img-repo '${{vars.BASE_IMAGES_REPO}}' \
-                    --svc-img-repo '${{vars.SERVICE_IMAGES_REPO}}')" >> "$GITHUB_OUTPUT"
+              run: echo "matrix=$(python3 .github/scripts/image_discovery.py)" >> "$GITHUB_OUTPUT"
 
     build:
         needs: discover
@@ -61,6 +58,9 @@ jobs:
               with:
                   images: ${{matrix.image}}
                   tags: type=raw,value=${{matrix.tag}}
+                  labels: |
+                    org.opencontainers.image.title=${{matrix.tag}}
+                    org.opencontainers.image.description=${{matrix.description}}
 
             - name: Build and Push Docker image
               uses: docker/build-push-action@v7

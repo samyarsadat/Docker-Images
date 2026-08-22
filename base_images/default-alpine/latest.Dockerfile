@@ -4,9 +4,6 @@
 
 FROM alpine:latest
 
-# Metadata
-LABEL org.opencontainers.image.description="Default Alpine Latest"
-
 # Install required packages
 RUN apk add --no-cache bash git nano curl sudo ca-certificates
 

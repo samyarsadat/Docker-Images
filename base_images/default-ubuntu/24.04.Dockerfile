@@ -4,9 +4,6 @@
 
 FROM ubuntu:noble
 
-# Metadata
-LABEL org.opencontainers.image.description="Default Ubuntu (24.04 - Noble Numbat)"
-
 # Install required packages
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
