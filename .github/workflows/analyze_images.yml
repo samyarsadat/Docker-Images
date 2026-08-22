@@ -21,10 +21,11 @@ jobs:
 
             - name: Discover Images
               id: discover
-              run: echo "matrix=$(python3 .github/scripts/image_discovery.py \
+              run: |
+                echo "matrix=$(python3 .github/scripts/image_discovery.py \
                     --analysis \
-                    --base-img-repo '${{vars.BASE_IMAGES_REPO}}' \
-                    --svc-img-repo '${{vars.SERVICE_IMAGES_REPO}}')" >> "$GITHUB_OUTPUT"
+                    --base-img-repo '${{ vars.BASE_IMAGES_REPO }}' \
+                    --svc-img-repo '${{ vars.SERVICE_IMAGES_REPO }}')" >> "$GITHUB_OUTPUT"
 
     build:
         needs: discover
