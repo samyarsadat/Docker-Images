@@ -26,8 +26,9 @@ RUN groupadd --gid "$USER_GID" "$USERNAME" \
     && chown -R "$USER_UID:$USER_GID" "/home/$USERNAME/"
 
 # Configure SUDO
-RUN echo "$USERNAME ALL=\(root\) NOPASSWD:ALL" > "/etc/sudoers.d/$USERNAME" \
+RUN echo "$USERNAME ALL=(root) NOPASSWD:ALL" > "/etc/sudoers.d/$USERNAME" \
     && chmod 0440 "/etc/sudoers.d/$USERNAME"
 
 # Environment setup
-USER root
+WORKDIR /home/${USERNAME}
+USER $USERNAME

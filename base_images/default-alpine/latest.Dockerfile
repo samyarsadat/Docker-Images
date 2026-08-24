@@ -23,4 +23,5 @@ RUN echo "$USERNAME ALL=(ALL) NOPASSWD: ALL" > "/etc/sudoers.d/$USERNAME" \
     && chmod 0440 "/etc/sudoers.d/$USERNAME"
 
 # Environment setup
+WORKDIR /home/${USERNAME}
 USER $USERNAME
