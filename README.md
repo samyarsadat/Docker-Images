@@ -49,7 +49,6 @@ Image tags are automatically derived from the Dockerfile filename and the parent
 | `serverpi-caddy`        | The Caddy V2 image that is used by ServerPi       | `serverpi-caddy-latest`                                                        | `linux/amd64`, `linux/arm64` | `service_images`          |
 | `pico-build-action`     | Raspberry Pi Pico GitHub build action image       | `pico-build-action-latest`                                                     | `linux/amd64`, `linux/arm64` | `service_images`          |
 | `microros-build-action` | MicroROS GitHub build action image                | `microros-build-action-humble`,<br> `microros-build-action-jazzy`              | `linux/amd64`, `linux/arm64` | `service_images`          |
-| `excalidraw-arm64`      | Excalidraw image for ARM64                        | `excalidraw-arm64-latest`                                                      | `linux/arm64`                | `service_images`          |
 
 <br>
 
