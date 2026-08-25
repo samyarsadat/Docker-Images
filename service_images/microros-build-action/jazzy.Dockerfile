@@ -2,7 +2,7 @@
 # Copyright 2025-2026 Samyar Sadat Akhavi
 # Licensed under the MIT license
 
-FROM ros:jazzy
+FROM ros:jazzy@sha256:2589a8fba5257307857890173c069852c2abf913a0be7970f172478baecb09e4
 
 # Install required packages
 RUN apt-get update \
