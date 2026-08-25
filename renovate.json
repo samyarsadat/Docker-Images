@@ -4,6 +4,7 @@
         "config:recommended",
         "docker:pinDigests"
     ],
+    "dependencyDashboardAutoclose": true,
     "schedule": ["* 0-5 * * MON"],
     "labels": ["dependencies"],
     "packageRules": [{
