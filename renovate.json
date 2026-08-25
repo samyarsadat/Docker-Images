@@ -6,7 +6,13 @@
     ],
     "schedule": ["* 0-5 * * MON"],
     "labels": ["dependencies"],
+    "packageRules": [{
+        "description": "keep Docker image tags fixed",
+        "matchDatasources": ["docker"],
+        "versioning": "exact"
+    }],
     "customManagers": [{
+        "description": "update commit hashes for git-based dependencies",
         "customType": "regex",
         "managerFilePatterns": [
             "/(^|[/.])Dockerfile([.-][^/]*)?$/"
