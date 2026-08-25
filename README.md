@@ -22,7 +22,7 @@ Service images are for a specific use case. They are not meant to be generic.
 [![Analyze Images](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml/badge.svg)](https://github.com/samyarsadat/Docker-Images/actions/workflows/analyze_images.yml)
 
 > [!NOTE]
-> Both CI jobs auto-run every Monday, so images are updated weekly.
+> Both CI jobs auto-run every Tuesday, so images are updated weekly.
 
 ### Repository Structure
 
