@@ -84,4 +84,4 @@ jobs:
                   tags: ${{steps.meta.outputs.tags}}
                   labels: ${{steps.meta.outputs.labels}}
                   cache-from: type=gha,scope=${{matrix.tag}}
-                  cache-to: type=gha,scope=${{matrix.tag}},mode=max
+                  cache-to: ${{case(github.event_name != 'pull_request', format('type=gha,scope={0},mode=max', matrix.tag), '')}}
