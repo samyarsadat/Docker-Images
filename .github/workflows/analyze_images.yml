@@ -2,7 +2,7 @@ name: Analyze Images
 on: 
     push:
     schedule:
-        - cron: '25 17 * * MON'   # Every Monday at 5:25 PM UTC
+        - cron: '0 3 * * TUE'   # Every Tuesday at 03:00 AM UTC
 
 permissions:
     security-events: write

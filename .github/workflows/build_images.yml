@@ -2,7 +2,7 @@ name: Build & Push Images
 on: 
     push:
     schedule:
-        - cron: '25 14 * * MON'   # Every Monday at 2:25 PM UTC
+        - cron: '0 0 * * TUE'   # Every Tuesday at 00:00 AM UTC
 
 permissions:
     packages: write
