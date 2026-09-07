@@ -5,7 +5,7 @@
 FROM ubuntu:jammy@sha256:2edbbc5dc405e9612ba3584ce95480277e3eb374407b5505fe26f17df77c7dbc
 
 # renovate: depName=pico-sdk packageName=https://github.com/raspberrypi/pico-sdk currentValue=master
-ARG PICO_SDK_COMMIT=98a542c1a62fb549ffb5d66a3e5892b06276b670
+ARG PICO_SDK_COMMIT=079c6f39023649b154152db30f1d781e884879bc
 
 # Install required packages
 RUN apt-get update \
