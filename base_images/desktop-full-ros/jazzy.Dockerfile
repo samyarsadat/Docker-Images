@@ -2,7 +2,7 @@
 # Copyright 2025-2026 Samyar Sadat Akhavi
 # Licensed under the MIT license
 
-FROM osrf/ros:jazzy-desktop-full@sha256:d16957210572c5f919f3f9bd2fb0cc24a82542647489d8b8eda7c3beda31305f
+FROM osrf/ros:jazzy-desktop-full@sha256:ae7ad3ac243da1dfd8bd402a2fa08e149ffbf7a385013bd8ef798d0800accdc8
 
 # Install required packages
 RUN apt-get update \
