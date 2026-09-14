@@ -2,7 +2,7 @@
 # Copyright 2024-2026 Samyar Sadat Akhavi
 # Licensed under the MIT license
 
-FROM osrf/ros:humble-desktop-full@sha256:b0302b39a2321079950b6a91a13eafe62e60bd42ffe61c3cea3d5e96886d0a87
+FROM osrf/ros:humble-desktop-full@sha256:1db1e4e941d4f77fab55bcd479158a75273329335e86ec468bff280859e8178c
 
 # Install required packages
 RUN apt-get update \
