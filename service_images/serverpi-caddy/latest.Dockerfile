@@ -17,7 +17,7 @@ RUN CGO_ENABLED=0 GOOS="$TARGETOS" GOARCH="$TARGETARCH" \
         --with "github.com/WeidiDeng/caddy-cloudflare-ip@$CADDY_CF_IP_COMMIT"
 
 # Standard Caddy image
-FROM caddy:latest@sha256:13ba145cba2f3e28fa801994876e4c086d1b95d5aa2a520a734765ffb6b12017
+FROM caddy:latest@sha256:14a9c00d4e833ebc2b65d36515b37bde3b73f0b323a2663aaafc88953d8c4e3f
 
 # Copy new Caddy binary from build step
 COPY --from=builder /usr/bin/caddy /usr/bin/caddy
