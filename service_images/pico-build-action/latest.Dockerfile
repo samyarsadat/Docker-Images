@@ -2,7 +2,7 @@
 # Copyright 2024-2026 Samyar Sadat Akhavi
 # Licensed under the MIT license
 
-FROM ubuntu:jammy@sha256:829f6df217bcbae2b371026e81711d1a787c61b2967ad09d015063663ebafbf7
+FROM ubuntu:jammy@sha256:b8b6ee6aa931ecd9d0d952abc34dc0e5f7c6a30c6bb71b079fe399fde0329c02
 
 # renovate: depName=pico-sdk packageName=https://github.com/raspberrypi/pico-sdk currentValue=master
 ARG PICO_SDK_COMMIT=079c6f39023649b154152db30f1d781e884879bc
