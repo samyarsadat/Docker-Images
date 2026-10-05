@@ -2,7 +2,7 @@
 # Copyright 2024-2026 Samyar Sadat Akhavi
 # Licensed under the MIT license
 
-FROM eprosima/vulcanexus:humble-base@sha256:abd3716d879447f83ef999cb05cb4c3f2e3e6de11abe5d8d4db73d1d741d7ba1
+FROM eprosima/vulcanexus:humble-base@sha256:7884ce11cc53bbe6878c242437bc16799cac83aef9e77a80558e36542ec35e2f
 
 # Install required packages
 RUN apt-get update \
