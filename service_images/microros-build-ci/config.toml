@@ -1,0 +1,1 @@
+description_fmt = "Micro-ROS CI Build Image (ros-{stem})"
