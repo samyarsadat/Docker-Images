@@ -3,7 +3,7 @@
 # Licensed under the MIT license.
 
 FROM --platform=${BUILDPLATFORM} \
-     caddy:builder@sha256:ccd8bdb5d7b25c78962bac46b7daaabfb0a354d0decf7d752e1b69caf46d9b85 \
+     caddy:builder@sha256:da86330f46775cf80844de8fc2c51cd3e9d59fc4946faa715070f9216421f5af \
      AS builder
 
 # renovate: depName=caddy-cloudflare-ip packageName=https://github.com/WeidiDeng/caddy-cloudflare-ip currentValue=main
