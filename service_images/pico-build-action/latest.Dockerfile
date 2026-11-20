@@ -3,4 +3,4 @@
 # Licensed under the MIT license
 # This image is retained for backwards compatibility
 
-FROM samyarsadat/service_images:pico-sdk-ci-latest@sha256:01bca1615a311411ce9566d22455532d0a937a7b72cb3a5376453fcec38c7432
+FROM samyarsadat/service_images:pico-sdk-ci-latest@sha256:c9e1f26a32314cbd211212572364e62c99cedbb69b756a72928b8fb2199ef65c
