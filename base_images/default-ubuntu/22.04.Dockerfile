@@ -2,7 +2,7 @@
 # Copyright 2024-2026 Samyar Sadat Akhavi
 # Licensed under the MIT license
 
-FROM ubuntu:jammy@sha256:076e7bf82319619f28dd0aa9c02ab34b055ad37100395b4f49a2ffba04fb5e11
+FROM ubuntu:jammy@sha256:f64b2ffc2f10ab8f8505aa56b2664bd846cbb9df87c7e2532e30f7667021c0e6
 
 # Install required packages
 RUN apt-get update \
