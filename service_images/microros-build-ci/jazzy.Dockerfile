@@ -12,7 +12,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # renovate: depName=micro-ros-setup packageName=https://github.com/micro-ROS/micro_ros_setup currentValue=jazzy
-ARG UROS_SETUP_COMMIT=ed45678c6c0b567277b019f61c395add51c0783e
+ARG UROS_SETUP_COMMIT=010551b708a834aa8c362c93f39e2a7b0140d3ea
 
 # Install micro-ROS setup
 ARG UROS_SETUP_TMP=/micro-ros-setup/tmp
